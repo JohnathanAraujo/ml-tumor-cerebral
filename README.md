@@ -13,6 +13,7 @@ Ultralytics YOLO
 OpenCV
 TensorFlow/Keras
 NumPy/Pandas
+tkinter
 
 
 
@@ -39,8 +40,9 @@ Manipulação de Imagens: OpenCV
 
 Treinamento e IA: TensorFlow, Keras, PyTorch
 
-Ambiente de Desenvolvimento: Jupyter Notebook, Google Colab, Docker
+Ambiente de Desenvolvimento: Vscode
 
+Interface: tkinter
 
 
 📌 Próximos Passos
