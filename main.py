@@ -1,3 +1,5 @@
+#Script de treinamento do modelo
+
 # Load a model
 #model = YOLO(r"C:\Users\Pichau\ml-tumor-cerebral\runs\detect\train6\weights\best.pt")  # load a pretrained model (recommended for training)
 
@@ -10,6 +12,8 @@
 #results[0].show()  # ou results.show()
 
 
+
+#Script de funcionamento do sistema
 import tkinter as tk
 from tkinter import messagebox, filedialog, simpledialog
 from PIL import Image, ImageTk
