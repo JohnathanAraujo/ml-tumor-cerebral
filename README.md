@@ -57,6 +57,7 @@ Interface: tkinter
 Fique à vontade para contribuir com este projeto! Para isso:
 
 Faça um fork do repositório.
+
 Crie uma branch com sua funcionalidade (git checkout -b minha-feature).
 Faça um commit das suas alterações (git commit -m 'Minha nova feature').
 Envie para o repositório (git push origin minha-feature).
@@ -64,11 +65,16 @@ Abra um pull request.
 
 
 📌 Autores:
+
 👤 Gabriel Gonçalves da Silva
+
 👤 Johnathan Araujo Nunes
+
 👤 Mateus Fonseca da Silva
 
 
+
+Licença YOLO:
 
 @software{yolov8_ultralytics,
   author = {Glenn Jocher and Ayush Chaurasia and Jing Qiu},
@@ -78,4 +84,4 @@ Abra um pull request.
   url = {https://github.com/ultralytics/ultralytics},
   orcid = {0000-0001-5950-6979, 0000-0002-7603-6750, 0000-0003-3783-7069},
   license = {AGPL-3.0}
-}
+  }
