@@ -1,7 +1,7 @@
 #Script de treinamento do modelo
 
 # Load a model
-#model = YOLO(r"C:\Users\Pichau\ml-tumor-cerebral\runs\detect\train6\weights\best.pt")  # load a pretrained model (recommended for training)
+#model = YOLO(yolov8n.pt)  # load a pretrained model (recommended for training)
 
 # Train the model
 #results = model.train(data="brain-tumor.yaml", epochs=100, imgsz=608)
@@ -108,20 +108,31 @@ def abrir_dashboard():
         label.config(image=tk_img)
         label.image = tk_img
 
-    def escrever_relatorio():
-        nome = paciente_info.get("nome")
-        if not nome:
-            messagebox.showwarning("Aviso", "Nenhuma imagem foi analisada ainda.")
-            return
+    def gerar_relatorio(paciente_nome, resultado_predicao, observacoes, diretorio="relatorios"):
+        os.makedirs(diretorio, exist_ok=True)
+        data = datetime.now().strftime("%d-%m-%Y")
 
-        texto = simpledialog.askstring("Relatório Médico", "Digite o relatório para este paciente:")
-        if texto:
-            data = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-            caminho = os.path.join(PASTA_RELATORIO, f"{nome}_{data}.txt")
-            with open(caminho, "w", encoding="utf-8") as f:
-                f.write(f"Relatório Médico - Paciente: {nome}\nData: {data}\n\n{texto}")
-            messagebox.showinfo("Salvo", "Relatório salvo com sucesso.")
+        nome_arquivo = f"{diretorio}/Relatorio_{paciente_nome}_{data}.txt"
 
+        with open(nome_arquivo, "w", encoding="utf-8") as file:
+            file.write("----------------------------------------------\n")
+            file.write("   RELATÓRIO MÉDICO DE ANÁLISE - TUMOR CEREBRAL\n")
+            file.write("----------------------------------------------\n\n")
+            file.write(f"Paciente: {paciente_nome}\n")
+            file.write(f"Data da Análise: {data}\n\n")
+            file.write("------------------------------------------------\n")
+            file.write("🔍 Dados da Análise:\n\n")
+            file.write("O sistema de IA foi utilizado para realizar a análise.\n\n")
+            file.write(f"Resultado da Análise: {resultado_predicao}\n\n")
+            file.write("------------------------------------------------\n")
+            file.write("📄 Observações do Médico:\n\n")
+            file.write(f"{observacoes}\n\n")
+            file.write("------------------------------------------------\n")
+            file.write(f"Data: {data}\n\n")
+            file.write("___________________________________________\n")
+            file.write("Assinatura do Médico\n")
+        print(f"Relatório gerado em: {nome_arquivo}")
+        
     def avaliar_predicao(correta: bool):
         nome = paciente_info.get("nome")
         imagem = paciente_info.get("imagem_analisada")
@@ -140,7 +151,12 @@ def abrir_dashboard():
     frm_botoes.pack(pady=20)
 
     tk.Button(frm_botoes, text="Selecionar Nova Imagem", font=("Arial", 12), command=selecionar_imagem).grid(row=0, column=0, padx=10)
-    tk.Button(frm_botoes, text="Escrever Relatório", font=("Arial", 12), command=escrever_relatorio).grid(row=0, column=1, padx=10)
+    tk.Button(frm_botoes, text="Gerar Relatório TXT", font=("Arial", 12),
+          command=lambda: gerar_relatorio(
+              paciente_info.get("nome"),
+              resultado_predicao="Tumor DETECTADO ou NÃO DETECTADO",
+              observacoes=simpledialog.askstring("Relatório Médico", "Digite as observações para este paciente:")
+          )).grid(row=0, column=4, padx=10)
     tk.Button(frm_botoes, text="Predição Correta ✔️", font=("Arial", 12), command=lambda: avaliar_predicao(True)).grid(row=0, column=2, padx=10)
     tk.Button(frm_botoes, text="Predição Incorreta ❌", font=("Arial", 12), command=lambda: avaliar_predicao(False)).grid(row=0, column=3, padx=10)
 
