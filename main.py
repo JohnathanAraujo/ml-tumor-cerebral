@@ -23,7 +23,7 @@ import shutil
 from datetime import datetime
 
 # Caminho do modelo YOLO
-MODEL_PATH = r"C:\Users\Pichau\ml-tumor-cerebral\runs\detect\train6\weights\best.pt"
+MODEL_PATH = r"runs\detect\train6\weights\best.pt"
 model = YOLO(MODEL_PATH)
 
 # Usuários (mock)
