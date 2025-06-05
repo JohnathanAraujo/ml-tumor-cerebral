@@ -4,9 +4,11 @@ Este projeto aplica técnicas de Aprendizado de Máquina para a detecção de tu
 📖 Descrição
 
 O modelo YOLO foi treinado com um dataset especializado de imagens médicas para detectar padrões característicos de tumores cerebrais. A abordagem adotada permite:
+
 ✅ Classificação entre imagens com e sem tumores.
 ✅ Segmentação das áreas afetadas para melhor análise clínica.
 ✅ Automação do processo diagnóstico para apoio médico.
+
 O projeto foi desenvolvido com Python e utiliza bibliotecas de IA e visão computacional, incluindo:
 
 Ultralytics YOLO
@@ -20,6 +22,7 @@ tkinter
 📊 Resultados
 
 O modelo foi avaliado em um dataset de 1.116 imagens, atingindo os seguintes resultados:
+
 📌 Acurácia: 95.2%
 📌 Sensibilidade: 93.5%
 📌 Especificidade: 96.1%
@@ -43,6 +46,17 @@ Treinamento e IA: TensorFlow, Keras, PyTorch
 Ambiente de Desenvolvimento: Vscode
 
 Interface: tkinter
+
+🛠️Para implementar o sistema em seu computador, será necessário os seguintes comando além da versão 3.11.9 do python:
+
+py get-pip.py
+
+pip install pillow
+
+pip install ultralytics
+
+Pronto, com esses comandos de instalação, é possivel agora implementar nosso sistema ao seu computador sem problemas!!!
+
 
 
 📌 Próximos Passos
