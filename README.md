@@ -78,6 +78,8 @@ Envie para o repositório (git push origin minha-feature).
 Abra um pull request.
 
 
+🎓 Trabalho de Conclusão de Curso – Ciência da Computação (UDF – 2025)
+
 📌 Autores:
 
 👤 Gabriel Gonçalves da Silva
@@ -85,7 +87,6 @@ Abra um pull request.
 👤 Johnathan Araujo Nunes
 
 👤 Mateus Fonseca da Silva
-
 
 
 Licença YOLO:
